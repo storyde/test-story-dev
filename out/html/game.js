@@ -259,7 +259,7 @@
   // This function updates the game right sidebar.
   window.updateRightSidebar = function() {
       $('#holtext').empty();
-      var scene = dendryUI.game.scenes.holtext;
+      var scene = dendryUI.game.sidebars.holtext;
       var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
       $('#holtext').append(dendryUI.contentToHTML.convert(displayContent));
   };
