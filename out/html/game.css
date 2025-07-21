@@ -189,6 +189,25 @@ blockquote + blockquote.attribution {
 #qualities h1 + p:first-line {
   font-weight: normal;
 }
+#holtext {
+  text-indent: 0;
+  line-height: 1.3em;
+}
+#holtext p {
+  text-indent: 0;
+}
+#holtext h1 {
+  font-size: 1.1em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: rgba(255, 255, 255, 0.75) 2px 2px 2px,
+               rgba(0, 0, 0, 0.1) -1px -1px 2px;
+}
+#holtext h1 + p:first-line {
+  font-weight: normal;
+}
 
 #save {
     background: rgba(0,0,0,0.7);
