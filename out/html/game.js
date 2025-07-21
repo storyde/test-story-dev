@@ -250,11 +250,11 @@
         const content = text.slice(prefix.length);
 
         if (cls === 'na') {
-          // Narration – mittig, mit .na
+          // Narration – middle, with .na
           return `<div class="bubble na">${content}</div>`;
         }
         else if (cls === 'me') {
-          // Me – rechts, Profilkürzel rechts
+          // Me – right, profileabbrevation right
           return `
             <div class="chat-line me">
               <div class="bubble me">${content}</div>
@@ -262,7 +262,7 @@
             </div>`;
         }
         else {
-          // Andere Charaktere – Profilkürzel links
+          // Other characters – profileabbrevation left
           const label = prefix.trim().slice(0,2);
           return `
             <div class="chat-line">
@@ -273,7 +273,7 @@
       }
     }
 
-    // Kein bekannter Prefix → reiner Text
+    // No known prefix → just text
     return text;
   };
 
