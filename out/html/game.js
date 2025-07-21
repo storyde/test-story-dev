@@ -233,7 +233,48 @@
   // This function allows you to modify the text before it's displayed.
   // E.g. wrapping chat-like messages in spans.
   window.displayText = function(text) {
-      return text;
+    const mapping = {
+      'Me: ':          'me',
+      'Facilitator: ': 'fa',
+      'Librarian: ':   'li',
+      'Archivist: ':   'ar',
+      'Scholar: ':     'sc',
+      'Historian: ':   'hi',
+      'Curator: ':     'cu',
+      'Narration: ':   'na'
+    };
+
+    for (const prefix in mapping) {
+      if (text.startsWith(prefix)) {
+        const cls = mapping[prefix];
+        const content = text.slice(prefix.length);
+
+        if (cls === 'na') {
+          // Narration – mittig, mit .na
+          return `<div class="bubble na">${content}</div>`;
+        }
+        else if (cls === 'me') {
+          // Me – rechts, Profilkürzel rechts
+          return `
+            <div class="chat-line me">
+              <div class="bubble me">${content}</div>
+              <span class="profile me">Me</span>
+            </div>`;
+        }
+        else {
+          // Andere Charaktere – Profilkürzel links
+          const label = prefix.trim().slice(0,2);
+          return `
+            <div class="chat-line">
+              <span class="profile ${cls}">${label}</span>
+              <div class="bubble ${cls}">${content}</div>
+            </div>`;
+        }
+      }
+    }
+
+    // Kein bekannter Prefix → reiner Text
+    return text;
   };
 
   // This function allows you to do something in response to signals.

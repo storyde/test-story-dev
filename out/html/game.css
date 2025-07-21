@@ -139,6 +139,88 @@ blockquote + blockquote.attribution {
   margin-top: -1em;
 }
 
+/* Chat Styles */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Line for Profileabbrevation + Bubble */
+.chat-line {
+  display: flex;
+  align-items: flex-start;
+  margin: 0.4em 0;
+}
+
+/* Profile-abbrevation */
+.profile {
+  width: 2em;
+  height: 2em;
+  background: #888;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 0.5em;
+}
+
+/* Basic Bubble-Style */
+.bubble {
+  padding: 0.6em 1em;
+  border-radius: 1em;
+  max-width: 70%;
+  font-family: sans-serif;
+}
+
+/* Narration (middle, neutral) */
+.bubble.na {
+  background: #eee;
+  color: #333;
+  align-self: center;
+  text-align: center;
+  margin: 0.4em 0;
+}
+
+/* Player Bubble (right) */
+.chat-line.me {
+  justify-content: flex-end;
+}
+.bubble.me {
+  background: #d1f0d1;
+  text-align: right;
+}
+.profile.me {
+  margin-left: 0.5em;
+  margin-right: 0;
+  background: #4caf50;
+}
+
+/* Facilitator (left) */
+.bubble.fa  { background: #d0e0fd; }
+.profile.fa { background: #2196f3; }
+
+/* Librarian */
+.bubble.li  { background: #fdd0d0; }
+.profile.li { background: #e91e63; }
+
+/* Archivist */
+.bubble.ar  { background: #f0dff0; }
+.profile.ar { background: #9c27b0; }
+
+/* Scholar */
+.bubble.sc  { background: #e0f0fd; }
+.profile.sc { background: #03a9f4; }
+
+/* Historian */
+.bubble.hi  { background: #fdf0d0; }
+.profile.hi { background: #ff9800; }
+
+/* Curator */
+.bubble.cu  { background: #dff0f0; }
+.profile.cu { background: #009688; }
+
 /* sidebar code - This is mostly copied from undum. */
 #mid_panel {
   margin: 0 16rem;
