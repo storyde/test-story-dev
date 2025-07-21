@@ -260,19 +260,6 @@
   window.onDisplayContent = function() {
       window.updateSidebar();
   };
-    
-  // This function updates the game right sidebar.
-  window.updateRightSidebar = function() {
-      $('#holtext').empty();
-      var scene = dendryUI.game.scenes.holtext;
-      var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-      $('#holtext').append(dendryUI.contentToHTML.convert(displayContent));
-  };
-  
-  // This function runs on every new content display. Currently, all it does is update the right sidebar.
-  window.onDisplayContent = function() {
-      window.updateRightSidebar();
-  };
 
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
